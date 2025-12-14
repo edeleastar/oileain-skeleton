@@ -4,8 +4,8 @@
  * Supports multiple icon sets and persists user preferences.
  */
 
-import type { IconType, Theme, ThemeService } from "../types";
-import { FluentIconLib } from "../icons/fluent-icons";
+import type { IconType, Theme, ThemeService } from "./types";
+import { OileainIconLib } from "./icons";
 
 import { rune } from "$lib/runes.svelte";
 
@@ -17,14 +17,13 @@ import { rune } from "$lib/runes.svelte";
 export const themeService: ThemeService = {
   /** Available themes with their associated icon libraries */
   themes: [
-    { name: "tutors", icons: FluentIconLib },
-    { name: "classic", icons: FluentIconLib },
-    { name: "dyslexia", icons: FluentIconLib },
-    { name: "terminus", icons: FluentIconLib },
-    { name: "rose", icons: FluentIconLib },
-    { name: "cerberus", icons: FluentIconLib },
+    { name: "tutors", icons: OileainIconLib },
+    { name: "terminus", icons: OileainIconLib },
+    { name: "rose", icons: OileainIconLib },
+    { name: "cerberus", icons: OileainIconLib },
+    { name: "seafoam", icons: OileainIconLib },
+    { name: "vintage", icons: OileainIconLib },
   ] as Theme[],
-
 
   /** Current light move layout */
   lightMode: rune<string>("light"),
@@ -108,7 +107,7 @@ export const themeService: ThemeService = {
       return iconLib[type];
     } else {
       console.log("No type found for icon", type);
-      return FluentIconLib.tutors;
+      return OileainIconLib.tutors;
     }
   },
 
@@ -118,7 +117,7 @@ export const themeService: ThemeService = {
    * @param icon - Icon definition to add
    */
   addIcon(type: string, icon: IconType) {
-    FluentIconLib[type] = icon;
+    OileainIconLib[type] = icon;
   },
 
   /**

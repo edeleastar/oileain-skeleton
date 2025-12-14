@@ -1,9 +1,8 @@
 <script lang="ts">
   import Menu from "$lib/ui/components/Menu.svelte";
   import Icon from "$lib/ui/components/Icon.svelte";
-  import { themeService } from "$lib/services/themes/services/themes.svelte";
-
   import { Combobox, SegmentedControl, Portal } from "@skeletonlabs/skeleton-svelte";
+  import { themeService } from "$lib/ui/themes/themes.svelte";
 
   interface ComboxData {
     label: string;
@@ -30,7 +29,7 @@
 
 {#snippet menuContent()}
   <div class="ml-2 font-bold">Layout Options</div>
-  <div class="mt-5">
+  <div class="mt-5 relative z-9999">
     <div class="mt-4 mb-1 ml-2">Appearance</div>
     <div class="mb-2 flex justify-center">
       <SegmentedControl defaultValue={themeService.lightMode.value} onValueChange={(e) => themeService.setDisplayMode(e.value!)}>

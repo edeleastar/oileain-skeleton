@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { themeService } from "$lib/services/themes";
   import Icon from "@iconify/svelte";
   import { Portal, Tooltip } from "@skeletonlabs/skeleton-svelte";
+  import { themeService } from "../themes/themes.svelte";
 
   interface Props {
     type?: string;

@@ -12,7 +12,7 @@
     <AppBar.Lead>
       <div class="flex items-center">
         <InfoButton />
-        <Icon type="oileain" height="64"></Icon>
+        <Icon type="oileain" height="80"></Icon>
       </div>
     </AppBar.Lead>
     <AppBar.Headline>
@@ -30,7 +30,7 @@
       <div class="flex items-center">
         <LayoutMenu />
       </div>
-      <span class="hidden md:block">
+      <span class="flex items-center">
         <TocButton />
       </span>
     </AppBar.Trail>

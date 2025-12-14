@@ -1,8 +1,6 @@
-import type { IconLib } from "../types";
+import type { IconLib } from "./types";
 
-export const FluentIconLib: IconLib = {
-
-
+export const OileainIconLib: IconLib = {
   // app icons
   oileain: { type: "noto:compass", color: "warning" },
   home: { type: "mdi:compass-rose", color: "primary" },
