@@ -1,0 +1,38 @@
+<script lang="ts">
+  import { AppBar } from "@skeletonlabs/skeleton-svelte";
+  import LayoutMenu from "./LayoutMenu.svelte";
+  import TocButton from "./buttons/TocButton.svelte";
+  import InfoButton from "./buttons/InfoButton.svelte";
+  import { currentIsland, currentView } from "$lib/runes.svelte";
+  import Icon from "../components/Icon.svelte";
+</script>
+
+<AppBar>
+  <AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
+    <AppBar.Lead>
+      <div class="flex items-center">
+        <InfoButton />
+        <Icon type="oileain" height="64"></Icon>
+      </div>
+    </AppBar.Lead>
+    <AppBar.Headline>
+      <h1>Oileain: islands of Ireland : {currentView.value}</h1>
+      {#if currentIsland.value}
+        {@html currentIsland.value.nameHtml}
+      {:else}
+        <b> Select a marker to explore island...</b>
+      {/if}
+    </AppBar.Headline>
+    <AppBar.Trail>
+      <Icon type="home" link="/" height="64" tip="Home"></Icon>
+      <Icon type="explorer" link="/explorer"  height="64" tip="Navigator"></Icon>
+      <Icon type="navigator" link="/navigator/Great-Saltee-Island" height="64" tip="Explorer"></Icon>
+      <div class="flex items-center">
+        <LayoutMenu />
+      </div>
+      <span class="hidden md:block">
+        <TocButton />
+      </span>
+    </AppBar.Trail>
+  </AppBar.Toolbar>
+</AppBar>

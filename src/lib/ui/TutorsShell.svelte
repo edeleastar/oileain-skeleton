@@ -1,0 +1,16 @@
+<script lang="ts">
+  import { onMount, type Snippet } from "svelte";
+  import MainNavigator from "./navigators/MainNavigator.svelte";
+
+  type Props = { children: Snippet };
+  let { children }: Props = $props();
+</script>
+
+<div class="flex h-screen flex-col">
+  <header class="bg-surface-100 dark:bg-surface-950 sticky top-0 z-10">
+    <MainNavigator />
+  </header>
+  <main class="flex-1 overflow-y-auto">
+    {@render children()}
+  </main>
+</div>
