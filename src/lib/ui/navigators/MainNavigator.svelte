@@ -1,7 +1,7 @@
 <script lang="ts">
   import { AppBar } from "@skeletonlabs/skeleton-svelte";
   import LayoutMenu from "./LayoutMenu.svelte";
-  import TocButton from "./buttons/TocButton.svelte";
+  import CoastNavigator from "./buttons/CoastNavigator.svelte";
   import InfoButton from "./buttons/InfoButton.svelte";
   import { currentIsland, currentView } from "$lib/runes.svelte";
   import Icon from "../components/Icon.svelte";
@@ -10,7 +10,7 @@
 <AppBar>
   <AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
     <AppBar.Lead>
-      <div class="flex items-center">
+      <div class="flex items-center gap-6">
         <InfoButton />
         <Icon type="oileain" height="80"></Icon>
       </div>
@@ -31,7 +31,7 @@
         <LayoutMenu />
       </div>
       <span class="flex items-center">
-        <TocButton />
+        <CoastNavigator />
       </span>
     </AppBar.Trail>
   </AppBar.Toolbar>
