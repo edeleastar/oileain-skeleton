@@ -46,7 +46,7 @@
 
 {#snippet menuSelector()}
   <div class="hover:preset-tonal-secondary dark:hover:preset-tonal-tertiary flex items-center rounded-lg p-2">
-    <Icon type="coasts" tip="Open course tree" height="40" />
+    <Icon type="coasts" tip="Wander the coasts" height="40" />
   </div>
 {/snippet}
 
