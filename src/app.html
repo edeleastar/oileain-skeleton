@@ -10,6 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <script>
+      // Initialize theme before page renders to prevent flash
+      (function () {
+        const savedMode = localStorage.getItem("modeCurrent") || "light";
+        const savedTheme = localStorage.getItem("theme") || "tutors";
+
+        if (savedMode === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
   </head>
   <body data-sveltekit-preload-data="tap">
     <div style="display: contents">%sveltekit.body%</div>

@@ -17,7 +17,6 @@ export const OileainIconLib: IconLib = {
   toc: { type: "fluent:line-horizontal-3-20-filled", color: "bg-base-content" },
   coursetree: { type: "ph:tree-view-duotone", color: "primary" },
 
-  courseinfo: { type: "fluent:info-28-regular", color: "bg-base-content" },
   info: { type: "tabler:map-question", color: "secondary" },
   close: { type: "carbon:close-outline", color: "primary" },
   theme: { type: "fluent:color-fill-24-regular", color: "success" },

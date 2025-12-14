@@ -29,7 +29,7 @@
 
 {#snippet menuContent()}
   <div class="ml-2 font-bold">Layout Options</div>
-  <div class="mt-5 relative z-9999">
+  <div class="relative z-9999 mt-5">
     <div class="mt-4 mb-1 ml-2">Appearance</div>
     <div class="mb-2 flex justify-center">
       <SegmentedControl defaultValue={themeService.lightMode.value} onValueChange={(e) => themeService.setDisplayMode(e.value!)}>
