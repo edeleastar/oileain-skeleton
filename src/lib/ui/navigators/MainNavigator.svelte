@@ -5,6 +5,7 @@
   import InfoButton from "./buttons/InfoButton.svelte";
   import { currentIsland, currentView } from "$lib/runes.svelte";
   import Icon from "../components/Icon.svelte";
+  import Separator from "../components/Separator.svelte";
 </script>
 
 <AppBar>
@@ -12,6 +13,7 @@
     <AppBar.Lead>
       <div class="flex items-center gap-6">
         <InfoButton />
+        <Separator />
         <Icon type="oileain" height="80"></Icon>
       </div>
     </AppBar.Lead>
@@ -27,6 +29,7 @@
       <Icon type="home" link="/" height="64" tip="Home"></Icon>
       <Icon type="explorer" link="/explorer" height="64" tip="Navigator"></Icon>
       <Icon type="navigator" link="/navigator/Great-Saltee-Island" height="64" tip="Explorer"></Icon>
+      <Separator />
       <div class="flex items-center">
         <LayoutMenu />
       </div>

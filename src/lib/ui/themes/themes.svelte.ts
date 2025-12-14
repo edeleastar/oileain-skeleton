@@ -17,12 +17,12 @@ import { rune } from "$lib/runes.svelte";
 export const themeService: ThemeService = {
   /** Available themes with their associated icon libraries */
   themes: [
-    { name: "tutors", icons: OileainIconLib },
+    { name: "oileain", icons: OileainIconLib },
+    { name: "seafoam", icons: OileainIconLib },
     { name: "terminus", icons: OileainIconLib },
     { name: "rose", icons: OileainIconLib },
     { name: "cerberus", icons: OileainIconLib },
-    { name: "seafoam", icons: OileainIconLib },
-    { name: "vintage", icons: OileainIconLib },
+    { name: "vintage", icons: OileainIconLib }
   ] as Theme[],
 
   /** Current light move layout */
@@ -38,13 +38,17 @@ export const themeService: ThemeService = {
    * @param forceMode - Optional display mode to enforce
    */
   initDisplay(forceTheme?: string, forceMode?: string): void {
+    if (typeof document === "undefined") return;
+
     if (forceTheme && forceMode && !localStorage[forceTheme]) {
       this.setDisplayMode(forceMode);
       this.setTheme(forceTheme);
       localStorage[forceTheme] = true;
     } else {
-      this.setDisplayMode(localStorage.modeCurrent);
-      this.setTheme(localStorage.theme);
+      const savedMode = localStorage.modeCurrent || "light";
+      const savedTheme = localStorage.theme || "tutors";
+      this.setDisplayMode(savedMode);
+      this.setTheme(savedTheme);
     }
   },
 
@@ -54,11 +58,14 @@ export const themeService: ThemeService = {
    * @param mode - Display mode to set
    */
   setDisplayMode(mode: string): void {
+    if (typeof document === "undefined") return;
+
     if (!mode) {
       mode = "light";
     }
     this.lightMode.value = mode;
     localStorage.modeCurrent = mode;
+
     if (mode === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -83,13 +90,16 @@ export const themeService: ThemeService = {
    * @param theme - Theme name to set
    */
   setTheme(theme: string): void {
+    if (typeof document === "undefined") return;
+
     if (!theme) {
-      theme = "tutors";
+      theme = "oileain";
     }
-    if (themeService.themes.find((theme) => theme.name === this.currentTheme.value)) {
+    const themeExists = themeService.themes.find((t) => t.name === theme);
+    if (themeExists) {
       this.currentTheme.value = theme;
     } else {
-      this.currentTheme.value = "tutors";
+      this.currentTheme.value = "oileain";
     }
     document.documentElement.setAttribute("data-theme", this.currentTheme.value);
     localStorage.theme = this.currentTheme.value;
@@ -107,7 +117,7 @@ export const themeService: ThemeService = {
       return iconLib[type];
     } else {
       console.log("No type found for icon", type);
-      return OileainIconLib.tutors;
+      return OileainIconLib.default;
     }
   },
 
@@ -131,5 +141,5 @@ export const themeService: ThemeService = {
       return iconLib[type].color;
     }
     return "primary";
-  },
+  }
 };

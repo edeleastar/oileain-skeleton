@@ -22,14 +22,13 @@
 
 {#snippet menuSelector()}
   <div class="hover:preset-tonal-secondary dark:hover:preset-tonal-tertiary flex items-center rounded-lg p-4">
-    <Icon type="lightMode" tip="Open Theme Menu" />
-    <span class="ml-2 hidden text-sm font-bold md:block">Layout</span>
+    <Icon type="lightMode" height="40" tip="Open Theme Menu" />
   </div>
 {/snippet}
 
 {#snippet menuContent()}
   <div class="ml-2 font-bold">Layout Options</div>
-  <div class="mt-5 relative z-9999">
+  <div class="relative z-9999 mt-5 mb-5">
     <div class="mt-4 mb-1 ml-2">Appearance</div>
     <div class="mb-2 flex justify-center">
       <SegmentedControl defaultValue={themeService.lightMode.value} onValueChange={(e) => themeService.setDisplayMode(e.value!)}>
@@ -73,9 +72,6 @@
         </Portal>
       </Combobox>
     </div>
-    <hr />
-
-    <hr />
   </div>
 {/snippet}
 
