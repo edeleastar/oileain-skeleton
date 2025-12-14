@@ -18,5 +18,4 @@ The application serves as both a reference tool and an exploration platform for 
 
 The detailed architecture of the application can be explored here:
 
-- <https://deepwiki.com/wit-hdip-comp-sci-2024/oileain>
-
+- <https://deepwiki.com/edeleastar/oileain-skeleton/>

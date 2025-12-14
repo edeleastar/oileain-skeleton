@@ -7,7 +7,7 @@
   import Icon from "../components/Icon.svelte";
 </script>
 
-<AppBar class="rounded-xl border-[1px]">
+<AppBar>
   <AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
     <AppBar.Lead>
       <div class="flex items-center">
@@ -25,7 +25,7 @@
     </AppBar.Headline>
     <AppBar.Trail>
       <Icon type="home" link="/" height="64" tip="Home"></Icon>
-      <Icon type="explorer" link="/explorer"  height="64" tip="Navigator"></Icon>
+      <Icon type="explorer" link="/explorer" height="64" tip="Navigator"></Icon>
       <Icon type="navigator" link="/navigator/Great-Saltee-Island" height="64" tip="Explorer"></Icon>
       <div class="flex items-center">
         <LayoutMenu />
