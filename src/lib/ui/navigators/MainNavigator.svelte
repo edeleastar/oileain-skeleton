@@ -7,7 +7,7 @@
   import Icon from "../components/Icon.svelte";
 </script>
 
-<AppBar>
+<AppBar class="rounded-xl border-[1px]">
   <AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
     <AppBar.Lead>
       <div class="flex items-center">
