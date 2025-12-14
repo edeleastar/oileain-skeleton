@@ -6,6 +6,9 @@ export const OileainIconLib: IconLib = {
   home: { type: "mdi:compass-rose", color: "primary" },
   navigator: { type: "ph:compass-tool-duotone", color: "error" },
   explorer: { type: "mdi:ruler-square-compass", color: "success" },
+  island: { type: "arcticons:island", color: "error" },
+  coast: { type: "flat-color-icons:landscape", color: "primary" },
+  coasts: { type: "temaki:kayaking", color: "primary" },
   search: { type: "fluent:search-24-filled", color: "primary" },
   tutors: { type: "fa-solid:chalkboard-teacher", color: "bg-base-content" },
   lightMode: { type: "fluent:paint-brush-24-filled", color: "warning" },
@@ -15,7 +18,7 @@ export const OileainIconLib: IconLib = {
   coursetree: { type: "ph:tree-view-duotone", color: "primary" },
 
   courseinfo: { type: "fluent:info-28-regular", color: "bg-base-content" },
-  info: { type: "fluent:info-28-regular", color: "primary" },
+  info: { type: "tabler:map-question", color: "secondary" },
   close: { type: "carbon:close-outline", color: "primary" },
   theme: { type: "fluent:color-fill-24-regular", color: "success" },
   default: { type: "fluent:re-order-dots-vertical-24-filled", color: "error" }
