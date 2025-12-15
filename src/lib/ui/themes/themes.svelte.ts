@@ -38,18 +38,10 @@ export const themeService: ThemeService = {
    * @param forceMode - Optional display mode to enforce
    */
   initDisplay(forceTheme?: string, forceMode?: string): void {
-    if (typeof document === "undefined") return;
-
-    if (forceTheme && forceMode && !localStorage[forceTheme]) {
-      this.setDisplayMode(forceMode);
-      this.setTheme(forceTheme);
-      localStorage[forceTheme] = true;
-    } else {
-      const savedMode = localStorage.modeCurrent || "light";
-      const savedTheme = localStorage.theme || "tutors";
-      this.setDisplayMode(savedMode);
-      this.setTheme(savedTheme);
-    }
+    const savedMode = localStorage.modeCurrent || "light";
+    const savedTheme = localStorage.theme || "tutors";
+    this.setDisplayMode(savedMode);
+    this.setTheme(savedTheme);
   },
 
   /**
@@ -116,7 +108,7 @@ export const themeService: ThemeService = {
     if (iconLib && iconLib[type]) {
       return iconLib[type];
     } else {
-      console.log("No type found for icon", type);
+      console.log("No icon found for type", type);
       return OileainIconLib.default;
     }
   },
